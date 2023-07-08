@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private GameObject healthGameObject;
     [SerializeField] private float health;
+    [SerializeField] private Slider healthBar;
 
     [SerializeField] private float healthLossAmount;
     [SerializeField] private float healthLossIncrement;
@@ -29,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 		if (gm.IsRunning())
 		{
             healthText.text = health.ToString("F0");
+            healthBar.value = health;
             if (!gameObject.GetComponent<BloodSuckingAction>().IsSucking())
             {
                 health -= healthLossAmount;
