@@ -1373,3 +1373,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suckingSpeed: 0.5
   sucking: 0
+  sizeScale: 50

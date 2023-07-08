@@ -6,11 +6,11 @@ public class BloodSuckingAction : MonoBehaviour
 {
     [SerializeField] private float suckingSpeed;
     [SerializeField] private bool sucking = false;
+    [SerializeField] private float sizeScale;
 
     private GameObject mosqGameObject;
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D mosqRigidBody;
-    private float mosqSize;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,8 @@ public class BloodSuckingAction : MonoBehaviour
             {
                 mosqGameObject.GetComponent<MosqHealth>().SetMosquitoHealth(suckingSpeed);
                 gameObject.GetComponent<PlayerHealth>().SetPlayerHealth(suckingSpeed);
+
+                mosqGameObject.transform.localScale -= new Vector3(suckingSpeed / sizeScale, suckingSpeed / sizeScale, suckingSpeed / sizeScale);
             }
         }
     }
