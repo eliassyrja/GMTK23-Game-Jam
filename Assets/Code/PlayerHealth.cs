@@ -32,8 +32,13 @@ public class PlayerHealth : MonoBehaviour
         healthLossSpeed += 0.01f;
     }
 
-    public float GetHealth()
+    public float GetPlayerHealth()
     {
         return health;
+    }
+
+    public void SetPlayerHealth(float newHealth)
+    {
+        health += newHealth;
     }
 }

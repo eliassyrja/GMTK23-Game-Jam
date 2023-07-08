@@ -625,6 +625,7 @@ GameObject:
   - component: {fileID: 779337904}
   - component: {fileID: 779337903}
   - component: {fileID: 779337902}
+  - component: {fileID: 779337906}
   - component: {fileID: 779337901}
   - component: {fileID: 779337900}
   - component: {fileID: 779337905}
@@ -812,6 +813,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &779337906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779337899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a48ec7335af4447b4ac2180f8b2a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mosquitoHealth: 30
 --- !u!1 &952436647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,3 +1371,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9261671481e7899418359436391652b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suckingSpeed: 0.5
+  sucking: 0

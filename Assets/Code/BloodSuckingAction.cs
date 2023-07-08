@@ -4,22 +4,41 @@ using UnityEngine;
 
 public class BloodSuckingAction : MonoBehaviour
 {
-    private GameObject mosqGameObject;
+    [SerializeField] private float suckingSpeed;
+    [SerializeField] private bool sucking = false;
 
+    private GameObject mosqGameObject;
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D mosqRigidBody;
+    private float mosqSize;
 
-    [SerializeField] private bool sucking = false;
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    void FixedUpdate()
+    {
+        if (sucking)
+        {
+            mosqRigidBody = mosqGameObject.GetComponent<Rigidbody2D>();
+            mosqRigidBody.velocity = new Vector2(0f, 0f);
+
+            gameObject.transform.position = mosqGameObject.transform.position;
+            playerRigidBody.velocity = new Vector2(0f, 0f);
+
+            if (mosqGameObject.GetComponent<MosqHealth>().GetMosquitoHealth() <= 0)
+            {
+                sucking = false;
+                Destroy(mosqGameObject);
+            } else
+            {
+                mosqGameObject.GetComponent<MosqHealth>().SetMosquitoHealth(suckingSpeed);
+                gameObject.GetComponent<PlayerHealth>().SetPlayerHealth(suckingSpeed);
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -29,22 +48,14 @@ public class BloodSuckingAction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                sucking = true;
-
-                mosqGameObject = collision.gameObject.transform.parent.gameObject;
-
-                mosqRigidBody = mosqGameObject.GetComponent<Rigidbody2D>();
-                mosqRigidBody.velocity = new Vector2(0f, 0f);
-
-                gameObject.transform.position = mosqGameObject.transform.position;
-                playerRigidBody.velocity = new Vector2(0f, 0f);
-
                 Debug.Log("SuccyMODE ACTIVATED");
+                mosqGameObject = collision.gameObject.transform.parent.gameObject;
+                sucking = true;
             }
             else
             {
-                sucking = false;
                 Debug.Log("SuccyMODE DE ACTIVATED");
+                sucking = false;
                 mosqRigidBody = null;
             }
         }
