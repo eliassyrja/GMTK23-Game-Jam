@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+  
         if(movement.x < 0)
 		{
             if (movement.y < 0)

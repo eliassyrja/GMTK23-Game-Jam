@@ -10,7 +10,9 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private GameObject healthGameObject;
     [SerializeField] private float health;
-    [SerializeField] private float healthLossSpeed;
+
+    [SerializeField] private float healthLossAmount;
+    [SerializeField] private float healthLossIncrement;
 
     public EndScreen endScreen;
 
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
             healthText.text = health.ToString("F0");
             if (!gameObject.GetComponent<BloodSuckingAction>().IsSucking())
             {
-                health -= healthLossSpeed;
+                health -= healthLossAmount;
                 if (health <= 0)
                 {
                     healthText.text = "0";
@@ -44,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     void IncreaseHealthLossSpeed()
     {
-        healthLossSpeed += 0.01f;
+        healthLossAmount += healthLossIncrement;
     }
 
     public float GetPlayerHealth()

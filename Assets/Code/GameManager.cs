@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float score;
     [SerializeField] private GameObject mosqPrefab;
     [SerializeField] private float maxMosqAmount;
-    [SerializeField] private float spawnBuffer;
+    [SerializeField] private float spawnRate;
 
     private float mosqAmount = 0f;
     private bool gameRunning;
@@ -17,7 +17,12 @@ public class GameManager : MonoBehaviour
     {
         gameRunning = true;
         score = 0f;
-        InvokeRepeating(nameof(SpawnMosquito), 0, 3);
+
+        for (int i = 0; i < maxMosqAmount; i++)
+        {
+            SpawnMosquito();
+        }
+        InvokeRepeating(nameof(SpawnMosquito), 0, spawnRate);
     }
 
     // Update is called once per frame
