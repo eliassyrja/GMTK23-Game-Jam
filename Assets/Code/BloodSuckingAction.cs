@@ -11,11 +11,13 @@ public class BloodSuckingAction : MonoBehaviour
     private GameObject mosqGameObject;
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D mosqRigidBody;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        gm = FindAnyObjectByType<GameManager>();
     }
 
 
@@ -33,6 +35,7 @@ public class BloodSuckingAction : MonoBehaviour
             {
                 sucking = false;
                 Destroy(mosqGameObject);
+                gm.ReduceMosquito();
             } else
             {
                 mosqGameObject.GetComponent<MosqHealth>().SetMosquitoHealth(suckingSpeed);

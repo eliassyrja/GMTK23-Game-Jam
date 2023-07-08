@@ -7,12 +7,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private Rigidbody2D rb;
 
-    Vector2 movement;
+    private GameManager gm;
+    private Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gm = FindAnyObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        movement.Normalize();
-        rb.MovePosition(rb.position + movementSpeed * Time.fixedDeltaTime * movement);
+        if (gm.IsRunning())
+        {
+            movement.Normalize();
+            rb.MovePosition(rb.position + movementSpeed * Time.fixedDeltaTime * movement);
+        }
     }
 }
