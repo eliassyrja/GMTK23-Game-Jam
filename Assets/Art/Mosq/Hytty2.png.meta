@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91f69b66b189f994994fa3fa6ff4c98c
+guid: 28c2d15836f14c84cbe2db7e0901ab5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dracula_death_sprite_sheet_0
+      name: Hytty2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ca9bdca379cf504e8d847cc9238be67
-      internalID: -540387285
+      spriteID: b59d42b50930c224587debc8a7ca4bb4
+      internalID: 1089559028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dracula_death_sprite_sheet_1
+      name: Hytty2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 50
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c379a0e6a9f9ec4e93de6cb1728fc2c
-      internalID: -276780508
+      spriteID: be32d5a9e9e86e04f92224b8c486b39d
+      internalID: 1642797302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dracula_death_sprite_sheet_2
+      name: Hytty2_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 100
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d42448a8a4d244f93ebb340081f948
-      internalID: 409187617
+      spriteID: 60707acbf6f251b46910a1425e07d6fb
+      internalID: -2096121830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dracula_death_sprite_sheet_3
+      name: Hytty2_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 150
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e70f9764568228488ec941863ffe20b
-      internalID: -5340304
+      spriteID: 02fd1c74aca89b046814ffba19c4a2b8
+      internalID: 708873221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752c835e5034bb24489f894097b13914
+      internalID: 1509274643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ecf708d4a5b0342ab368df21c1c37a
+      internalID: 74769983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14848ebdf223f4440ad3e3ffa9e22d5e
+      internalID: -1021830776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0e5891d3b7b2648bf803bd3a9e3c14
+      internalID: -931947166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93754b1b873f19b4d9cf460b198b6f4c
+      internalID: 1675641733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hytty2_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504702548595fd04daee52a2b50f10dc
+      internalID: 850975891
       vertices: []
       indices: 
       edges: []
@@ -201,10 +327,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dracula_death_sprite_sheet_0: -540387285
-      dracula_death_sprite_sheet_1: -276780508
-      dracula_death_sprite_sheet_2: 409187617
-      dracula_death_sprite_sheet_3: -5340304
+      Hytty2_0: 1089559028
+      Hytty2_1: 1642797302
+      Hytty2_2: -2096121830
+      Hytty2_3: 708873221
+      Hytty2_4: 1509274643
+      Hytty2_5: 74769983
+      Hytty2_6: -1021830776
+      Hytty2_7: -931947166
+      Hytty2_8: 1675641733
+      Hytty2_9: 850975891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

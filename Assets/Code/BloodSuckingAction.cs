@@ -7,6 +7,7 @@ public class BloodSuckingAction : MonoBehaviour
     [SerializeField] private float suckingSpeed;
     [SerializeField] private bool sucking = false;
     [SerializeField] private float sizeScale;
+    [SerializeField] private GameObject bloodSplatter;
 
     private GameObject mosqGameObject;
     private Rigidbody2D playerRigidBody;
@@ -34,7 +35,7 @@ public class BloodSuckingAction : MonoBehaviour
             if (mosqGameObject.GetComponent<MosqHealth>().GetMosquitoHealth() <= 0)
             {
                 sucking = false;
-                Destroy(mosqGameObject);
+                StartCoroutine(DeathAndDestroy());
                 gm.ReduceMosquito();
             } else
             {
@@ -70,4 +71,12 @@ public class BloodSuckingAction : MonoBehaviour
     {
         return sucking;
     }
+
+    private IEnumerator DeathAndDestroy()
+	{
+        mosqGameObject.GetComponent<Animator>().SetTrigger("Death");
+        mosqGameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+        yield return new WaitForSeconds(0.4f);
+        Destroy(mosqGameObject);
+	}
 }
