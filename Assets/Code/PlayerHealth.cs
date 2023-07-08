@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float healthLossSpeed;
 
+    public EndScreen endScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,10 @@ public class PlayerHealth : MonoBehaviour
         if (!gameObject.GetComponent<BloodSuckingAction>().IsSucking())
         {
             health -= healthLossSpeed;
+            if (health <= 0)
+            {
+                endScreen.Setup(1000);
+            }
         }
     }
 
