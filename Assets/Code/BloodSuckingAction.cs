@@ -8,6 +8,8 @@ public class BloodSuckingAction : MonoBehaviour
 
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D mosqRigidBody;
+
+    [SerializeField] private bool sucking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +25,33 @@ public class BloodSuckingAction : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (Input.GetKey(KeyCode.E) && collision.gameObject.CompareTag("SuccRadius"))
+        if (collision.gameObject.CompareTag("SuccRadius"))
         {
-            mosqGameObject = collision.gameObject.transform.parent.gameObject;
+            if (Input.GetKey(KeyCode.E))
+            {
+                sucking = true;
 
-            mosqRigidBody = mosqGameObject.GetComponent<Rigidbody2D>();
-            mosqRigidBody.velocity = new Vector2(0f, 0f);
+                mosqGameObject = collision.gameObject.transform.parent.gameObject;
 
-            gameObject.transform.position = mosqGameObject.transform.position;
-            playerRigidBody.velocity = new Vector2(0f, 0f);
+                mosqRigidBody = mosqGameObject.GetComponent<Rigidbody2D>();
+                mosqRigidBody.velocity = new Vector2(0f, 0f);
 
-            Debug.Log("SuccyMODE ACTIVATED");
+                gameObject.transform.position = mosqGameObject.transform.position;
+                playerRigidBody.velocity = new Vector2(0f, 0f);
+
+                Debug.Log("SuccyMODE ACTIVATED");
+            }
+            else
+            {
+                sucking = false;
+                Debug.Log("SuccyMODE DE ACTIVATED");
+                mosqRigidBody = null;
+            }
         }
-
-        mosqRigidBody = null;
-
     }
 
+    public bool IsSucking()
+    {
+        return sucking;
+    }
 }

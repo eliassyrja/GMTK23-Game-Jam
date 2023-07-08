@@ -18,11 +18,13 @@ public class PlayerHealth : MonoBehaviour
         InvokeRepeating("IncreaseHealthLossSpeed", 10, 10);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         healthText.text = health.ToString("F0");
-        health -= healthLossSpeed;
+        if (!gameObject.GetComponent<BloodSuckingAction>().IsSucking())
+        {
+            health -= healthLossSpeed;
+        }
     }
 
     void IncreaseHealthLossSpeed()
