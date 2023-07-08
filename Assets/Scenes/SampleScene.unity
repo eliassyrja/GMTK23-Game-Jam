@@ -614,8 +614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e15a552e97cee44aeb914ce5c048a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draculaDeath: {fileID: 8300000, guid: 9c95e7f3a95e91840be845509cab3e5a, type: 3}
-  mosqDeath: {fileID: 8300000, guid: 6dfdb73404fe32549ab8b4f2fdd86ce6, type: 3}
+  sounds:
+  - name: DraculaDeath
+    clip: {fileID: 8300000, guid: 9c95e7f3a95e91840be845509cab3e5a, type: 3}
+    volume: 0.432
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &680663609
 GameObject:
   m_ObjectHideFlags: 0
