@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EndScreen : MonoBehaviour
 {
-
     private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject scoreGameObject;
 
