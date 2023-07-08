@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         healthText = healthGameObject.GetComponent<TextMeshProUGUI>();
-        InvokeRepeating("IncreaseHealthLossSpeed", 10, 10);
+        InvokeRepeating(nameof(IncreaseHealthLossSpeed), 10, 10);
     }
 
     void FixedUpdate()
