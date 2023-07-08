@@ -37,6 +37,7 @@ public class BloodSuckingAction : MonoBehaviour
                 sucking = false;
                 StartCoroutine(DeathAndDestroy());
                 gm.ReduceMosquito();
+                gm.GetComponent<AudioManager>().PlayClip("DraculaDeath", gameObject.transform);
             } else
             {
                 mosqGameObject.GetComponent<MosqHealth>().SetMosquitoHealth(suckingSpeed);
