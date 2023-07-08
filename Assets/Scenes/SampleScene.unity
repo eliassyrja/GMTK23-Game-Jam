@@ -1802,6 +1802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rb: {fileID: 1793698756}
+  rotationSpeed: 0.1
 --- !u!114 &1793698758
 MonoBehaviour:
   m_ObjectHideFlags: 0
