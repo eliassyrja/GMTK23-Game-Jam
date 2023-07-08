@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnMosquito()
     {
-        if (mosqAmount < maxMosqAmount)
+        if (mosqAmount < maxMosqAmount && gameRunning)
         {
             Debug.Log("moskerino");
             Instantiate(mosqPrefab, new Vector3(Random.Range(-7.5f, 7.5f), Random.Range(-3.75f, 3.75f), 0), Quaternion.identity);

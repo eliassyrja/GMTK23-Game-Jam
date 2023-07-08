@@ -33,7 +33,9 @@ public class PlayerHealth : MonoBehaviour
                 if (health <= 0)
                 {
                     healthText.text = "0";
+                    StartCoroutine(DeathAndDestroy());
                     gm.SetGameOver();
+                    gm.GetComponent<AudioManager>().PlayClip("DraculaDeath", gameObject.transform);
                     endScreen.Setup(gm.GetScore());
                 }
             }
@@ -53,5 +55,11 @@ public class PlayerHealth : MonoBehaviour
     public void SetPlayerHealth(float newHealth)
     {
         health += newHealth;
+    }
+    private IEnumerator DeathAndDestroy()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("Death");
+        yield return new WaitForSeconds(0.4f);
+        Destroy(gameObject);
     }
 }
