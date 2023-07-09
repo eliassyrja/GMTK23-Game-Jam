@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject optionsGameObject;
+    private AudioManager audioManager;
+    
     void Start()
     {
         gameObject.SetActive(true);
+        audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlayClip("MenuMusic", Camera.main.transform, true);
     }
 
     public void StartGame()

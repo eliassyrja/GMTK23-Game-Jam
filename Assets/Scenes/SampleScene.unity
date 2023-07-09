@@ -624,12 +624,17 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MosqDeath
     clip: {fileID: 8300000, guid: 6dfdb73404fe32549ab8b4f2fdd86ce6, type: 3}
-    volume: 0.432
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
   - name: Sucking
     clip: {fileID: 8300000, guid: 050ac7e0cdf298f4895d7c8a0419c215, type: 3}
     volume: 0.245
+    pitch: 1
+    source: {fileID: 0}
+  - name: Track
+    clip: {fileID: 8300000, guid: 99cb0b93e9343bf488107b388416dfae, type: 3}
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
 --- !u!1 &582970562
@@ -2584,7 +2589,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rb: {fileID: 1793698756}
-  rotationSpeed: 0.1
 --- !u!114 &1793698758
 MonoBehaviour:
   m_ObjectHideFlags: 0

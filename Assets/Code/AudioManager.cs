@@ -22,8 +22,25 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-    public void PlayClip (string name, Transform position)
+    public void PlayClip (string name, Transform position, bool loop)
 	{
+        foreach (Sound sound in sounds)
+        {
+            if (sound.name == name)
+            {
+				if (loop)
+				{
+                    sound.source.loop = true;
+                    sound.source.Play();
+                }
+                else
+                    sound.source.PlayOneShot(sound.clip);
+            }
+        }
+    }
+
+    public void PlayClip (string name, Transform position)
+    {
         foreach (Sound sound in sounds)
         {
             if (sound.name == name)
@@ -32,6 +49,7 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
     public AudioSource GetSuckingAudio()
     {
         foreach (Sound sound in sounds)

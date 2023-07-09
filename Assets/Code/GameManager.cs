@@ -13,11 +13,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxMosqAmount;
     [SerializeField] private float spawnRate;
 
+    private AudioManager audioManager;
     private float mosqAmount = 0f;
     private bool gameRunning;
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlayClip("Track", Camera.main.transform, true);
         gameRunning = true;
         score = 0f;
 
