@@ -318,8 +318,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aaaf9598471a645498527cf95741d058, type: 2}
-  m_sharedMaterial: {fileID: -4151888063378525446, guid: aaaf9598471a645498527cf95741d058, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71e31a601b89bd743b0368bebd3ebd01, type: 2}
+  m_sharedMaterial: {fileID: -1598630782832844920, guid: 71e31a601b89bd743b0368bebd3ebd01, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -776,11 +776,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5021009, y: 0.50422376}
-  - {x: -0.50553477, y: -0.501583}
-  - {x: 0.5003183, y: -0.5030644}
-  - {x: 0.50432223, y: 0.50214213}
-  - {x: -0.50210047, y: 0.50422376}
+  - {x: -0.49757925, y: 0.5000061}
+  - {x: -0.4976141, y: -0.4897945}
+  - {x: 0.49797428, y: -0.49020028}
+  - {x: 0.49805215, y: 0.49958488}
+  - {x: -0.4975436, y: 0.49997497}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1754,8 +1754,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71e31a601b89bd743b0368bebd3ebd01, type: 2}
+  m_sharedMaterial: {fileID: -1598630782832844920, guid: 71e31a601b89bd743b0368bebd3ebd01, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
