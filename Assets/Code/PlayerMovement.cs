@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float rotationSpeed = 5f;
 
     private Camera cam;
     private BloodSuckingAction bsa;
