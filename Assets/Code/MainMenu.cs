@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] GameObject optionsGameObject;
     void Start()
     {
         gameObject.SetActive(true);
@@ -19,5 +20,17 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenOptions()
+    {
+        gameObject.SetActive(false);
+        optionsGameObject.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsGameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 }
