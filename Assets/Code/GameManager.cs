@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
 	{
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
 	}
 
     public float GetScore()
