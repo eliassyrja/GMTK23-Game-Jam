@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI inGameScoreText;
+    [SerializeField] private TextMeshProUGUI inGameScore;
     [SerializeField] private float score;
     [SerializeField] private GameObject mosqPrefab;
     [SerializeField] private float maxMosqAmount;
@@ -28,7 +31,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * 10f;
+		if (gameRunning)
+		{
+            score += Time.deltaTime * 10f;
+            inGameScore.text = score.ToString("F0");
+        }
     }
 
     public void Restart()
@@ -48,7 +55,9 @@ public class GameManager : MonoBehaviour
     public void SetGameOver()
 	{
         gameRunning = false;
-	}
+        inGameScore.gameObject.SetActive(false);
+        inGameScoreText.gameObject.SetActive(false);
+    }
     
     public void ReduceMosquito()
     {

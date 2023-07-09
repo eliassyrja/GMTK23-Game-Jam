@@ -14,6 +14,8 @@ public class BloodSuckingAction : MonoBehaviour
     private Rigidbody2D mosqRigidBody;
     private GameManager gm;
     private bool targetIsDead;
+    private AudioSource suckingAudio;
+    private bool audioPlaying;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class BloodSuckingAction : MonoBehaviour
         targetIsDead = false;
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
         gm = FindAnyObjectByType<GameManager>();
+        suckingAudio = gm.GetComponent<AudioManager>().GetSuckingAudio();
     }
 
 
@@ -33,10 +36,18 @@ public class BloodSuckingAction : MonoBehaviour
 
             StartCoroutine(SmoothJump(mosqGameObject.transform.position));
             playerRigidBody.velocity = new Vector2(0f, 0f);
+            
+			if (!audioPlaying)
+			{
+                suckingAudio.PlayOneShot(suckingAudio.clip);
+                audioPlaying = true;
+            }
 
             if (mosqGameObject.GetComponent<MosqHealth>().GetMosquitoHealth() <= 0 && !targetIsDead)
             {
                 targetIsDead = true;
+                suckingAudio.Stop();
+                audioPlaying = false;
                 sucking = false;
                 StartCoroutine(DeathAndDestroy());
                 gm.ReduceMosquito();
@@ -59,13 +70,11 @@ public class BloodSuckingAction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                Debug.Log("SuccyMODE ACTIVATED");
                 mosqGameObject = collision.gameObject.transform.parent.gameObject;
                 sucking = true;
             }
             else
             {
-                Debug.Log("SuccyMODE DE ACTIVATED");
                 sucking = false;
                 mosqRigidBody = null;
             }

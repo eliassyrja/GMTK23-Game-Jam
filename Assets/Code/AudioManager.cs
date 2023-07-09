@@ -29,9 +29,18 @@ public class AudioManager : MonoBehaviour
             if (sound.name == name)
             {
                 sound.source.PlayOneShot(sound.clip);
-
-                Debug.Log("Audio " + sound.name.ToString() + " played");
             }
         }
+    }
+    public AudioSource GetSuckingAudio()
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.name == "Sucking")
+            {
+                return sound.source;
+            }
+        }
+        return null;
     }
 }
