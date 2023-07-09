@@ -59,7 +59,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void SetPlayerHealth(float newHealth)
     {
-        health += newHealth;
+        if (health <= 100f)
+        {
+            health += newHealth;
+            if (health > 100f)
+			{
+                health = 100f;
+			}
+        }
     }
     private IEnumerator DeathAndDestroy()
     {

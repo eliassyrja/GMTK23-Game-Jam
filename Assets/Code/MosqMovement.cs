@@ -39,7 +39,7 @@ public class MosqMovement : MonoBehaviour
     {
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-        rb.velocity = direction * Mathf.Max(speed, 0f);
+        rb.velocity = direction * Mathf.Max(speed, 3f);
     }
 
     private IEnumerator RotateAndApplyForce(Quaternion direction)
