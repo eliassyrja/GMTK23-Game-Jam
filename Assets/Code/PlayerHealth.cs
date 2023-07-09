@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private IEnumerator DeathAndDestroy()
     {
-        gameObject.GetComponent<Animator>().SetTrigger("Death");
+        gameObject.GetComponentInChildren<Animator>().SetTrigger("Death");
         yield return new WaitForSeconds(0.4f);
         Destroy(gameObject);
     }

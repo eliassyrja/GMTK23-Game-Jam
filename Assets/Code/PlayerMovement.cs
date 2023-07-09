@@ -8,13 +8,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float rotationSpeed = 5f;
 
+    private Camera cam;
+    private BloodSuckingAction bsa;
     private GameManager gm;
     private Vector2 movement;
+    private Vector2 mousePosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        bsa = FindAnyObjectByType<BloodSuckingAction>();
         gm = FindAnyObjectByType<GameManager>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -22,61 +27,19 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-  
-        if(movement.x < 0)
-		{
-            if (movement.y < 0)
-            {
-                transform.eulerAngles = Vector3.forward * 135;
-            }
-            else if (movement.y > 0)
-			{
-                transform.eulerAngles = Vector3.forward * 45;
-            }
-            else
-                transform.eulerAngles = Vector3.forward * 90;
-        }
-        else if (movement.x > 0)
-        {
-            if (movement.y < 0)
-            {
-                transform.eulerAngles = Vector3.forward * -135;
-            }
-            else if (movement.y > 0)
-            {
-                transform.eulerAngles = Vector3.forward * -45;
-            }
-            else
-                transform.eulerAngles = Vector3.forward * -90;
-        }
-        else if (movement.y < 0)
-        {
-            transform.eulerAngles = Vector3.forward * 180;
-        }
-        else if (movement.y > 0)
-        {
-            transform.eulerAngles = Vector3.forward;
-        }
     }
 
     void FixedUpdate()
     {
-        if (gm.IsRunning())
+        if (gm.IsRunning() && !bsa.IsSucking())
         {
             movement.Normalize();
             rb.MovePosition(rb.position + movementSpeed * Time.fixedDeltaTime * movement);
-            RotateInDirectionOfInput();
+
+            mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 lookDirection = mousePosition - rb.position;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angle;
         }
     }
-
-    private void RotateInDirectionOfInput()
-	{
-        if (movement.x == 0 && movement.y == 0)
-		{
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-            rb.MoveRotation(rotation);
-		}
-	}
 }

@@ -31,7 +31,7 @@ public class BloodSuckingAction : MonoBehaviour
             mosqRigidBody = mosqGameObject.GetComponent<Rigidbody2D>();
             mosqRigidBody.velocity = new Vector2(0f, 0f);
 
-            gameObject.transform.position = mosqGameObject.transform.position;
+            StartCoroutine(SmoothJump(mosqGameObject.transform.position));
             playerRigidBody.velocity = new Vector2(0f, 0f);
 
             if (mosqGameObject.GetComponent<MosqHealth>().GetMosquitoHealth() <= 0 && !targetIsDead)
@@ -85,4 +85,14 @@ public class BloodSuckingAction : MonoBehaviour
         Destroy(mosqGameObject);
         targetIsDead = false;
 	}
+    private IEnumerator SmoothJump(Vector3 targetPos)
+	{
+        float duration = 0.1f;
+        var startPos = transform.position; // current rotation
+        for (float timer = 0; timer < duration; timer += Time.deltaTime)
+        {
+            transform.position = Vector3.Lerp(startPos, targetPos, timer/duration);
+            yield return 0;
+        }
+    }
 }
