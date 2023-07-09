@@ -9,7 +9,7 @@ public class MosqHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mosquitoHealth = 30f;
+        mosquitoHealth = 40f;
     }
 
     // Update is called once per frame

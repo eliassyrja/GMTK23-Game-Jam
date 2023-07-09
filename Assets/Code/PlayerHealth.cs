@@ -28,8 +28,8 @@ public class PlayerHealth : MonoBehaviour
 
     void FixedUpdate()
     {
-		if (gm.IsRunning())
-		{
+        if (gm.IsRunning())
+        {
             healthText.text = health.ToString("F0");
             healthBar.value = health;
             if (!gameObject.GetComponent<BloodSuckingAction>().IsSucking())
@@ -49,7 +49,11 @@ public class PlayerHealth : MonoBehaviour
 
     void IncreaseHealthLossSpeed()
     {
-        healthLossAmount += healthLossIncrement;
+        if (healthLossAmount <= 1)
+        {
+            healthLossAmount += healthLossIncrement;
+        }
+
     }
 
     public float GetPlayerHealth()
@@ -63,9 +67,9 @@ public class PlayerHealth : MonoBehaviour
         {
             health += newHealth;
             if (health > 100f)
-			{
+            {
                 health = 100f;
-			}
+            }
         }
     }
     private IEnumerator DeathAndDestroy()

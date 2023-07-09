@@ -2604,8 +2604,8 @@ MonoBehaviour:
   healthGameObject: {fileID: 367509223}
   health: 100
   healthBar: {fileID: 822063455}
-  healthLossAmount: 0.5
-  healthLossIncrement: 0.2
+  healthLossAmount: 0.1
+  healthLossIncrement: 0.1
   endScreen: {fileID: 1096637146}
 --- !u!114 &1793698759
 MonoBehaviour:
