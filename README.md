@@ -3,3 +3,5 @@
 
 Game for the 2023 GMTK Game Jam!
 Game created by Leevi and Elias.
+
+Playable at: https://okaymango.itch.io/draculas-revenge
